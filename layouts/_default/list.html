@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main>
+  <h1>Posts</h1>
+  {{ range .Paginator.Pages }}
+    <article class="post-list-item">
+      <h2><a href="{{ .URL }}">{{ .Title }}</a></h2>
+      <div class="meta clearfix">
+        <div class="u-pull-left">{{ .PublishDate.Format "January 2, 2006" }}</div>
+        <div class="u-pull-right">by Keichi Takahashi</div>
+      </div>
+    </article>
+  {{ end }}
+  {{ partial "pagination.html" . }}
+</main>
+{{ end }}

@@ -1,0 +1,21 @@
+<section class="paginator">
+<ul>
+{{ if .Paginator.HasPrev }}
+<li><a href="{{ .Paginator.Prev.URL }}">
+    <svg id="i-arrow-left" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M10 6 L2 16 10 26 M2 16 L30 16" />
+    </svg>
+  </a></li>
+{{ end  }}
+{{ range $pager := .Paginator.Pagers }}
+<li><a href="{{ .URL }}" class="{{ if eq $.Paginator.PageNumber .PageNumber }}active{{ end }}">{{ .PageNumber }}</a></li>
+{{ end }}
+{{ if .Paginator.HasNext  }}
+  <li><a href="{{ .Paginator.Next.URL  }}">
+    <svg id="i-arrow-right" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M22 6 L30 16 22 26 M30 16 L2 16" />
+    </svg>
+  </a></li>
+{{ end  }}
+</ul>
+</section>
