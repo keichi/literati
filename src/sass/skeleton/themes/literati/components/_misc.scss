@@ -1,0 +1,46 @@
+/* CODE
+ * ------------------------------------------------ */
+code {
+    padding: relative(2px) relative(5px);
+    margin: 0 relative(2px);
+    font-size: 90%;
+    white-space: nowrap;
+    background: $bg-color;
+    font-family: Monaco, Consolas, monospace;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+}
+
+pre > code {
+    margin: 0;
+    display: block;
+    padding: relative(10px) relative(15px);
+    white-space: pre;
+    overflow: scroll;
+    border: none;
+    border-radius: 0;
+}
+
+.highlight pre > code {
+    background: none;
+}
+
+
+/* MISC
+ * ------------------------------------------------ */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    margin: 0;
+    border-left: 5px solid $border-color;
+    padding-left: 1em;
+}
+
+hr {
+    border: 1px solid $border-color;
+    margin: relative(36px) 0;
+}
+

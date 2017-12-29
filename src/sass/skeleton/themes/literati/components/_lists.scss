@@ -1,0 +1,26 @@
+/* LISTS
+ * ------------------------------------------------ */
+ul {
+    list-style: circle outside none;
+}
+
+ol {
+    list-style: decimal outside none;
+}
+
+ol, ul {
+    margin-left: 0;
+    padding-left: relative(18px);
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin: relative(18px) 0 relative(18px) relative(36px);
+}
+
+li {
+    margin-bottom: relative(10px);
+}
+

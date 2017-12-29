@@ -1,0 +1,13 @@
+/* LINKS
+ * ------------------------------------------------ */
+a {
+    color: $font-color;
+    text-decoration: none;
+    box-shadow: inset 0 -1px 0 $font-color;
+    transition: box-shadow 150ms 0s ease;
+
+    &:hover {
+        box-shadow: inset 0 0 0 $font-color, 0 3px 0 $font-color;
+    }
+}
+

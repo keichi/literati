@@ -1,0 +1,18 @@
+// 1. core config and core config overrides
+@import "config";
+
+// 2. import theme dependencies
+@import "../../../node_modules/normalize-scss/sass/normalize/import-now";
+
+// 3. import default theme variables
+@import "themes/literati/vars";
+
+// 5. import default theme styles
+@import "themes/literati/components/base";
+@import "themes/literati/components/links";
+@import "themes/literati/components/lists";
+@import "themes/literati/components/misc";
+@import "themes/literati/components/tables";
+@import "themes/literati/components/typography";
+@import "themes/literati/components/utils";
+@import "themes/literati/grid";
