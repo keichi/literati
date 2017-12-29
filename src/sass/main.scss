@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5, h6 {
         letter-spacing: 0.38px;
         display: inline-block;
         margin-right: 20px;
+        margin: 0 20px 0 0;
     }
 
     nav {
@@ -62,11 +63,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 30px 0;
     color: $font-color-sub;
 
-    .copyright {
-    }
-
     .links {
         text-align: right;
+
+        a {
+            box-shadow: none;
+            color: $font-color-sub;
+            transition: color 150ms 0s ease;
+
+            &:hover {
+                box-shadow: none;
+                color: $font-color;
+            }
+        }
+
         svg {
             display: inline-block;
         }
@@ -106,14 +116,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-list-item {
     padding: 10px 0;
-    margin: 5px 0;
+    margin: 10px 0;
     border-bottom: 2px solid $border-color;
 
     h2 {
         font-weight: 700;
         font-size: 18px;
         letter-spacing: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 0rem;
     }
 }
 
