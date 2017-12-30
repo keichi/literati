@@ -3,10 +3,14 @@
   <h1>Posts</h1>
   {{ range .Paginator.Pages }}
     <article class="post-list-item">
-      <h2><a href="{{ .URL }}">{{ .Title }}</a></h2>
+      <h2><a href="{{ .URL }}" class="nounderline">{{ .Title }}</a></h2>
       <div class="meta clearfix">
-        <div class="u-pull-left">{{ .PublishDate.Format "January 2, 2006" }}</div>
-        <div class="u-pull-right">by {{ $.Param "author" }}</div>
+        {{ if not .PublishDate.IsZero }}
+        <div class="date">{{ .PublishDate.Format "January 2, 2006" }}</div>
+        {{ else if not .Date.IsZero }}
+        <div class="date">{{ .Date.Format "January 2, 2006" }}</div>
+        {{ end }}
+        <div class="author">by {{ $.Param "author" }}</div>
       </div>
     </article>
   {{ end }}

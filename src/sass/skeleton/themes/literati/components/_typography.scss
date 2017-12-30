@@ -7,12 +7,12 @@ h1, h2, h3, h4, h5, h6 {
         weight: $heading-weight;
     }
     margin-top: 0;
-    margin-bottom: relative(18px);
+    margin-bottom: $spacer;
 }
 
 h1, .h1 {
     font-size: relative(27px);
-    margin-bottom: relative(36px);
+    margin-bottom: $spacer-double;
 }
 
 h2, .h2 {

@@ -1,10 +1,16 @@
-<header class="site-header">
-  <h1><a href="{{ "/" | relURL }}">{{ .Site.Title  }}</a></h1>
-  <nav>
+<header class="site-header clearfix">
+  <h1 class="u-pull-left"><a href="{{ "/" | relURL }}" class="nounderline">{{ .Site.Title  }}</a></h1>
+  <nav class="u-pull-right">
+    <label for="menu-checkbox" id="menu-icon">
+      <svg id="i-menu" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
+      </svg>
+    </label>
+    <input type="checkbox" id="menu-checkbox" />
     <ul>
-    {{ range .Site.Menus.main  }}
-    <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a></li>
-    {{ end  }}
+      {{ range .Site.Menus.main  }}
+      <li><a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }} fade">{{ .Name }}</a></li>
+      {{ end  }}
     </ul>
   </nav>
 </header>

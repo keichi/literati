@@ -1,26 +1,12 @@
 @import "skeleton/loader";
 
-h1, h2, h3, h4, h5, h6 {
-    a {
-        box-shadow: none;
-        &:hover {
-            box-shadow: none;
-        }
-    }
-}
-
 .site-header {
-    margin: $spacer-2 0;
+    margin: $spacer-double 0;
     vertical-align: bottom;
 
     h1 {
         font-size: 24px;
-        display: inline-block;
         margin: 0 $spacer 0 0;
-    }
-
-    nav {
-        display: inline-block;
     }
 
     ul, li {
@@ -32,13 +18,16 @@ h1, h2, h3, h4, h5, h6 {
         display: inline-block;
         list-style: none;
         font-size: 14px;
+        margin: 0 $spacer-half;
+        &:last-child {
+            margin: 0 0 $spacer-half 0;
+        }
 
         a {
             text-transform: uppercase;
             box-shadow: none;
             color: $font-color-sub;
             padding-top: 5px;
-            margin: 0 $spacer-5;
             transition: border 150ms 0s ease;
 
             &:hover {
@@ -52,12 +41,60 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
     }
+
+    #menu-icon, #menu-checkbox {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: $tablet-width - 1) {
+    .site-header {
+        #menu-icon {
+            display: block;
+        }
+
+        ul {
+            margin: $spacer 0;
+            display: none;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+
+        li {
+            font-size: 18px;
+            font-weight: 300;
+            display: block;
+            text-align: center;
+            border-bottom: 2px solid $border-color;
+            padding: $spacer-half 0;
+
+            a:hover {
+                border: none;
+            }
+
+            a.active {
+                font-weight: 700;
+                border: none;
+            }
+        }
+
+        li:last-child {
+            // border-bottom: none;
+        }
+
+        [id^=menu-checkbox]:checked + ul{
+            display: block;
+        }
+    }
 }
 
 .site-footer {
-    margin-top: 50px;
+    margin: $spacer-double 0;
+    padding: $spacer-double 0;
     border-top: 2px solid $border-color;
-    padding: 30px 0;
     color: $font-color-sub;
 
     .links {
@@ -70,19 +107,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a.fade {
-    box-shadow: none;
     color: $font-color-sub;
     transition: color 150ms 0s ease;
 
     &:hover {
-        box-shadow: none;
         color: $font-color;
     }
 }
 
+a.nounderline {
+    box-shadow: none;
+    &:hover {
+        box-shadow: none;
+    }
+}
 
 .paginator {
-    margin: relative(36px) 0;
+    margin: $spacer-double 0;
 
     ul {
         text-align: center;
@@ -96,6 +137,11 @@ a.fade {
         a {
             display: table-cell;
         }
+
+        a.active {
+            font-weight: 700;
+            color: $font-color;
+        }
     }
 }
 
@@ -103,12 +149,27 @@ a.fade {
 .meta {
     font-weight: 300;
     color: $font-color-sub;
+
+    .date {
+        float: left;
+    }
+
+    .author {
+        float: right;
+    }
+}
+
+@media only screen and (max-width: $tablet-width - 1) {
+    .meta .author, .meta .date {
+        float: none;
+    }
 }
 
 .post-list-item {
-    padding: $spacer-5 0;
-    margin: $spacer-5 0;
+    padding: $spacer-half 0;
+    margin: $spacer-half 0;
     border-bottom: 2px solid $border-color;
+    position: relative;
 
     h2 {
         font-size: 18px;
@@ -117,8 +178,8 @@ a.fade {
 }
 
 .post-header {
-    padding: $spacer-5 0;
-    margin: $spacer 0 $spacer-2 0;
+    padding: $spacer-half 0;
+    margin: $spacer 0 $spacer-double 0;
     border-bottom: 2px solid $border-color;
 
     h2 {
