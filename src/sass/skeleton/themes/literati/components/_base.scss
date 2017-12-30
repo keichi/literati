@@ -31,11 +31,11 @@ body {
 /* SPACING
  * ------------------------------------------------ */
 button,
-.button { margin-bottom: relative(10px); }
+.button { margin-bottom: $spacer; }
 input,
 textarea,
 select,
-fieldset { margin-bottom: relative(15px); }
+fieldset { margin-bottom: $spacer; }
 pre,
 blockquote,
 dl,
@@ -44,4 +44,4 @@ table,
 p,
 ul,
 ol,
-form { margin-bottom: relative(36px); }
+form { margin-bottom: $spacer-2; }
