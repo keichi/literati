@@ -61,6 +61,7 @@
             position: absolute;
             left: 0;
             width: 100%;
+            z-index: 100;
         }
 
         li {
@@ -169,7 +170,6 @@ a.nounderline {
     padding: $spacer-half 0;
     margin: $spacer-half 0;
     border-bottom: 2px solid $border-color;
-    position: relative;
 
     h2 {
         font-size: 18px;
