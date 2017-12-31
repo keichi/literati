@@ -10,8 +10,8 @@
     "node-sass": "^4.7.2"
   },
   "scripts": {
-    "build": "node-sass --output-style compressed -r -o static/css/ src/sass/",
-    "watch": "node-sass -w -r -o static/css/ src/sass/"
+    "build": "node-sass --output-style compressed -r -o layouts/partials src/sass/main.scss",
+    "watch": "node-sass -w -r -o layouts/partials src/sass/main.scss"
   },
   "author": "",
   "license": "ISC"

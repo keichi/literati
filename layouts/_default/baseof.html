@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
 
-    <link href="{{ "css/main.css" | relURL }}" rel="stylesheet" type="text/css" />
+    <style>
+      {{ print (partial "main.css" .) | safeCSS  }}
+    </style>
     {{ partial "json-ld.html" . }}
   </head>
   <body>
