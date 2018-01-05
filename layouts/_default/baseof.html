@@ -8,6 +8,8 @@
     <style>
       {{ print (partial "main.css" .) | safeCSS  }}
     </style>
+
+    {{ partial "google-analytics.html" . }}
     {{ partial "json-ld.html" . }}
   </head>
   <body>
