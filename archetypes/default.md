@@ -1,5 +1,7 @@
-+++
-title = ""
-date = "{{ .Date }}"
-draft = true
-+++
+---
+title:
+date: {{ .Date }}
+description:
+tags: []
+draft: true
+---
