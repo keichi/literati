@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Literati theme for Hugo",
   "dependencies": {
-    "skeleton-sass-official": "^3.1.5"
+    "skeleton-sass-official": "^3.1.6"
   },
   "devDependencies": {
     "node-sass": "^4.11.0"
