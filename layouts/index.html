@@ -2,7 +2,7 @@
 <main>
   <article>
     <div class="post-header">
-      <h2><a href="{{ .URL }}" class="nounderline">{{ .Title }}</a></h2>
+      <h2><a href="{{ .Permalink }}" class="nounderline">{{ .Title }}</a></h2>
       <div class="meta clearfix">
         {{ if not .PublishDate.IsZero }}
         <div class="date">{{ .PublishDate.Format "January 2, 2006" }}</div>
