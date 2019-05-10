@@ -4,11 +4,16 @@
     <div class="post-header">
       <h2><a href="{{ .Permalink }}" class="nounderline">{{ .Title }}</a></h2>
       <div class="meta clearfix">
+        <div class="date">
         {{ if not .PublishDate.IsZero }}
-        <div class="date">{{ .PublishDate.Format "January 2, 2006" }}</div>
+          {{ .PublishDate.Format "January 2, 2006" }}
         {{ else if not .Date.IsZero }}
-        <div class="date">{{ .Date.Format "January 2, 2006" }}</div>
+          {{ .Date.Format "January 2, 2006" }}
         {{ end }}
+        {{ if not .Lastmod.IsZero }}
+          (Updated on: {{ .Lastmod.Format "January 2, 2006" }})
+        {{ end }}
+        </div>
         <div class="author">by {{ $.Param "author" }}</div>
       </div>
     </div>
