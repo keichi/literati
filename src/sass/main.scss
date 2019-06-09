@@ -188,6 +188,13 @@ a.nounderline {
     }
 }
 
-.post-body div {
-    margin: $spacer 0 $spacer-double 0;
+.post-body {
+    div {
+        margin: $spacer 0 $spacer-double 0;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+    }
 }
