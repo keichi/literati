@@ -187,3 +187,7 @@ a.nounderline {
         margin-bottom: $spacer;
     }
 }
+
+.post-body div {
+    margin: $spacer 0 $spacer-double 0;
+}
