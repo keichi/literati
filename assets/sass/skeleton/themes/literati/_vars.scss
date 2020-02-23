@@ -20,7 +20,7 @@ $base-width: if($is-fluid, 100%, ($base-col-width + $base-gutter-width) * $base-
 
 $font-size: 18px;  // default font size. Change here will adjust sizes across the board.
 $font-weight: 400; // sets the font weight
-$font-family: -apple-system, "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, Hiragino Kaku Gothic ProN, メイリオ, sans-serif;
 $font-color: rgb(85, 85, 85);
 
 $font-color-sub: rgb(155, 155, 155);

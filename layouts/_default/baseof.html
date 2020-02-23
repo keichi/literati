@@ -11,8 +11,11 @@
 
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
 
+    {{ $sass := resources.Get "sass/main.scss" }}
+    {{ $css := $sass | resources.ToCSS | resources.Minify }}
+
     <style>
-      {{ print (partial "main.css" .) | safeCSS  }}
+    {{ $css.Content | safeCSS }}
     </style>
 
     {{ partial "google-analytics.html" . }}
