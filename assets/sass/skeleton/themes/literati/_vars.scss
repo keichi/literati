@@ -3,8 +3,8 @@
 // stored in the marrow folder, but to also create project-level
 // variables.
 
-@import "../../../skeleton-sass/skeleton/themes/original/mixins/private";
-@import "../../../skeleton-sass/skeleton/themes/original/mixins/public";
+@import "../../../skeleton-sass/src/themes/original/mixins/private";
+@import "../../../skeleton-sass/src/themes/original/mixins/public";
 
 $prefix-for-webkit:    true !default;
 $prefix-for-mozilla:   true !default;
