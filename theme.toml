@@ -12,7 +12,7 @@ min_version = "0.31.1"
 
 [author]
   name = "Keichi Takahashi"
-  homepage = "https://keichi.net"
+  homepage = "https://keichi.dev"
 
 # If porting an existing theme
 [original]
