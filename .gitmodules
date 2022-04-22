@@ -1,6 +1,6 @@
 [submodule "assets/sass/normalize-scss"]
 	path = assets/sass/normalize-scss
-	url = https://github.com/JohnAlbin/normalize-scss.git
+	url = https://github.com/keichi/normalize-scss.git
 [submodule "assets/sass/skeleton-sass"]
 	path = assets/sass/skeleton-sass
 	url = https://github.com/atomicpages/skeleton-sass
