@@ -12,7 +12,7 @@
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
 
     {{ $sass := resources.Get "sass/main.scss" }}
-    {{ $css := $sass | resources.ToCSS | resources.Minify }}
+    {{ $css := $sass | css.Sass | resources.Minify }}
 
     <style>
     {{ $css.Content | safeCSS }}
