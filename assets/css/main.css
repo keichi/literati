@@ -1,0 +1,450 @@
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, Hiragino Kaku Gothic ProN, メイリオ, sans-serif;
+  --font-color: #555;
+  --font-color-sub: #9b9b9b;
+  --border-color: #f0f0f0;
+  --bg-color: #f8f8f8;
+
+  --spacer-half: 0.9rem;
+  --spacer: 1.8rem;
+  --spacer-double: 3.6rem;
+}
+
+/* Base
+ * ------------------------------------------------ */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: var(--font-family);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--font-color);
+}
+
+pre, blockquote, dl, figure, table, p, ul, ol {
+  margin-bottom: var(--spacer-double);
+}
+
+p {
+  margin-top: 0;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  margin: 0;
+  border-left: 5px solid var(--border-color);
+  padding-left: 1em;
+}
+
+hr {
+  height: 0;
+  overflow: visible;
+  border: 1px solid var(--border-color);
+  margin: var(--spacer-double) 0;
+}
+
+/* Links
+ * ------------------------------------------------ */
+a {
+  color: var(--font-color);
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 var(--font-color);
+  transition: box-shadow 150ms ease;
+
+  &:hover {
+    box-shadow: inset 0 0 0 var(--font-color), 0 3px 0 var(--font-color);
+  }
+
+  &.fade {
+    color: var(--font-color-sub);
+    transition: color 150ms ease;
+
+    &:hover { color: var(--font-color); }
+  }
+
+  &.nounderline,
+  &.nounderline:hover {
+    box-shadow: none;
+  }
+}
+
+/* Headings
+ * ------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: var(--spacer);
+}
+
+h1 { font-size: 2.7rem; margin-bottom: var(--spacer-double); }
+h2 { font-size: 2.4rem; margin-bottom: var(--spacer-double); }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 2rem; }
+h5 { font-size: 1.8rem; }
+h6 { font-size: 1.5rem; }
+
+/* Lists
+ * ------------------------------------------------ */
+ul { list-style: circle; }
+
+ol, ul {
+  padding-left: var(--spacer);
+
+  & & {
+    margin: var(--spacer) 0 var(--spacer) var(--spacer-double);
+  }
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+/* Code
+ * ------------------------------------------------ */
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+code {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  font-family: Monaco, Consolas, monospace;
+  font-size: 90%;
+  white-space: nowrap;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+}
+
+pre > code {
+  display: block;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+  overflow: scroll;
+  border: none;
+  border-radius: 0;
+}
+
+.highlight pre > code {
+  background: none;
+}
+
+/* Tables
+ * ------------------------------------------------ */
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e1e1e1;
+
+  &:first-child { padding-left: 0; }
+  &:last-child { padding-right: 0; }
+}
+
+/* Layout
+ * ------------------------------------------------ */
+.container {
+  position: relative;
+  box-sizing: border-box;
+  width: 80%;
+  max-width: 720px;
+  margin: 0 auto;
+
+  @media (width < 768px) {
+    width: 96%;
+  }
+
+  /* Reproduces the old Skeleton output, where only the right padding survived. */
+  @media (width < 400px) {
+    padding-right: 2rem;
+  }
+}
+
+.row {
+  margin-bottom: 2rem;
+}
+
+.clearfix::after,
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.u-pull-left { float: left; }
+.u-pull-right { float: right; }
+
+/* Header
+ * ------------------------------------------------ */
+.site-header {
+  margin: var(--spacer-double) 0;
+
+  h1 {
+    font-size: 24px;
+    margin: 0 var(--spacer) 0 0;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    list-style: none;
+    font-size: 14px;
+    margin: 0 var(--spacer-half);
+
+    &:last-child {
+      margin: 0 0 var(--spacer-half) 0;
+    }
+  }
+
+  li a {
+    text-transform: uppercase;
+    box-shadow: none;
+    padding-top: 5px;
+    transition: border 150ms ease;
+
+    &:hover {
+      border-top: 3px solid var(--font-color);
+    }
+
+    &.active {
+      font-weight: 700;
+      border-top: 3px solid var(--font-color);
+      color: var(--font-color);
+    }
+  }
+
+  #menu-icon, #menu-checkbox {
+    display: none;
+  }
+
+  @media (width < 768px) {
+    #menu-icon {
+      display: block;
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      margin: var(--spacer) 0;
+      background-color: #fff;
+    }
+
+    li {
+      display: block;
+      padding: var(--spacer-half) 0;
+      font-size: 18px;
+      font-weight: 300;
+      text-align: center;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    li a:hover,
+    li a.active {
+      border: none;
+    }
+
+    #menu-checkbox:checked + ul {
+      display: block;
+    }
+  }
+}
+
+/* Footer
+ * ------------------------------------------------ */
+.site-footer {
+  margin: var(--spacer-double) 0;
+  padding: var(--spacer-double) 0;
+  border-top: 2px solid var(--border-color);
+  color: var(--font-color-sub);
+
+  .links {
+    text-align: right;
+  }
+}
+
+/* Pagination
+ * ------------------------------------------------ */
+.paginator {
+  margin: var(--spacer-double) 0;
+
+  ul {
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px;
+  }
+
+  li a {
+    display: table-cell;
+
+    &.active {
+      font-weight: 700;
+      color: var(--font-color);
+    }
+  }
+}
+
+/* Posts
+ * ------------------------------------------------ */
+.meta {
+  font-weight: 300;
+  color: var(--font-color-sub);
+
+  .date { float: left; }
+  .author { float: right; }
+
+  @media (width < 768px) {
+    .date, .author { float: none; }
+  }
+}
+
+.post-list-item {
+  padding: var(--spacer-half) 0;
+  margin: var(--spacer-half) 0;
+  border-bottom: 2px solid var(--border-color);
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+}
+
+.post-header {
+  padding: var(--spacer-half) 0;
+  margin: var(--spacer) 0 var(--spacer-double) 0;
+  border-bottom: 2px solid var(--border-color);
+
+  h2 {
+    margin-bottom: var(--spacer);
+  }
+}
+
+.post-body {
+  div {
+    margin: var(--spacer) 0 var(--spacer-double) 0;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+
+/* Syntax highlighting: output of `hugo gen chromastyles --style=github`, pasted unedited.
+ * Regenerate with the same command; do not hand-edit below this line.
+ * ------------------------------------------------ */
+/* Generated using: hugo gen chromastyles --style=github */
+
+/* Background */ .bg { background-color:#f7f7f7; }
+/* PreWrapper */ .chroma { background-color:#f7f7f7;-webkit-text-size-adjust:none; }
+/* Error */ .chroma .err { color:#f6f8fa;background-color:#82071e }
+/* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
+/* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
+/* LineHighlight */ .chroma .hl { background-color:#dedede }
+/* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
+/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f }
+/* Line */ .chroma .line { display:flex; }
+/* Keyword */ .chroma .k { color:#cf222e }
+/* KeywordConstant */ .chroma .kc { color:#cf222e }
+/* KeywordDeclaration */ .chroma .kd { color:#cf222e }
+/* KeywordNamespace */ .chroma .kn { color:#cf222e }
+/* KeywordPseudo */ .chroma .kp { color:#cf222e }
+/* KeywordReserved */ .chroma .kr { color:#cf222e }
+/* KeywordType */ .chroma .kt { color:#cf222e }
+/* NameAttribute */ .chroma .na { color:#1f2328 }
+/* NameClass */ .chroma .nc { color:#1f2328 }
+/* NameConstant */ .chroma .no { color:#0550ae }
+/* NameDecorator */ .chroma .nd { color:#0550ae }
+/* NameEntity */ .chroma .ni { color:#6639ba }
+/* NameLabel */ .chroma .nl { color:#900;font-weight:bold }
+/* NameNamespace */ .chroma .nn { color:#24292e }
+/* NameOther */ .chroma .nx { color:#1f2328 }
+/* NameTag */ .chroma .nt { color:#0550ae }
+/* NameBuiltin */ .chroma .nb { color:#6639ba }
+/* NameBuiltinPseudo */ .chroma .bp { color:#6a737d }
+/* NameVariable */ .chroma .nv { color:#953800 }
+/* NameVariableClass */ .chroma .vc { color:#953800 }
+/* NameVariableGlobal */ .chroma .vg { color:#953800 }
+/* NameVariableInstance */ .chroma .vi { color:#953800 }
+/* NameVariableMagic */ .chroma .vm { color:#953800 }
+/* NameFunction */ .chroma .nf { color:#6639ba }
+/* NameFunctionMagic */ .chroma .fm { color:#6639ba }
+/* LiteralString */ .chroma .s { color:#0a3069 }
+/* LiteralStringAffix */ .chroma .sa { color:#0a3069 }
+/* LiteralStringBacktick */ .chroma .sb { color:#0a3069 }
+/* LiteralStringChar */ .chroma .sc { color:#0a3069 }
+/* LiteralStringDelimiter */ .chroma .dl { color:#0a3069 }
+/* LiteralStringDoc */ .chroma .sd { color:#0a3069 }
+/* LiteralStringDouble */ .chroma .s2 { color:#0a3069 }
+/* LiteralStringEscape */ .chroma .se { color:#0a3069 }
+/* LiteralStringHeredoc */ .chroma .sh { color:#0a3069 }
+/* LiteralStringInterpol */ .chroma .si { color:#0a3069 }
+/* LiteralStringOther */ .chroma .sx { color:#0a3069 }
+/* LiteralStringRegex */ .chroma .sr { color:#0a3069 }
+/* LiteralStringSingle */ .chroma .s1 { color:#0a3069 }
+/* LiteralStringSymbol */ .chroma .ss { color:#032f62 }
+/* LiteralNumber */ .chroma .m { color:#0550ae }
+/* LiteralNumberBin */ .chroma .mb { color:#0550ae }
+/* LiteralNumberFloat */ .chroma .mf { color:#0550ae }
+/* LiteralNumberHex */ .chroma .mh { color:#0550ae }
+/* LiteralNumberInteger */ .chroma .mi { color:#0550ae }
+/* LiteralNumberIntegerLong */ .chroma .il { color:#0550ae }
+/* LiteralNumberOct */ .chroma .mo { color:#0550ae }
+/* Operator */ .chroma .o { color:#0550ae }
+/* OperatorWord */ .chroma .ow { color:#0550ae }
+/* OperatorReserved */ .chroma .or { color:#0550ae }
+/* Punctuation */ .chroma .p { color:#1f2328 }
+/* Comment */ .chroma .c { color:#57606a }
+/* CommentHashbang */ .chroma .ch { color:#57606a }
+/* CommentMultiline */ .chroma .cm { color:#57606a }
+/* CommentSingle */ .chroma .c1 { color:#57606a }
+/* CommentSpecial */ .chroma .cs { color:#57606a }
+/* CommentPreproc */ .chroma .cp { color:#57606a }
+/* CommentPreprocFile */ .chroma .cpf { color:#57606a }
+/* GenericDeleted */ .chroma .gd { color:#82071e;background-color:#ffebe9 }
+/* GenericEmph */ .chroma .ge { color:#1f2328 }
+/* GenericInserted */ .chroma .gi { color:#116329;background-color:#dafbe1 }
+/* GenericOutput */ .chroma .go { color:#1f2328 }
+/* GenericUnderline */ .chroma .gl { text-decoration:underline }
+/* TextWhitespace */ .chroma .w { color:#fff }

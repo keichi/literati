@@ -11,8 +11,7 @@
 
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
 
-    {{ $sass := resources.Get "sass/main.scss" }}
-    {{ $css := $sass | css.Sass | resources.Minify }}
+    {{ $css := resources.Get "css/main.css" | resources.Minify }}
 
     <style>
     {{ $css.Content | safeCSS }}
